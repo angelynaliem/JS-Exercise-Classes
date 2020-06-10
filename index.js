@@ -131,7 +131,7 @@ class Lambdasian {
 */
 class Instructor extends Lambdasian {
   constructor(childAttributes) {
-    super(childAttributes)
+    super(childAttributes);
     this.name = childAttributes.name;
     this.age = childAttributes.age;
     this.location = childAttributes.location;
@@ -163,7 +163,25 @@ class Instructor extends Lambdasian {
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-class Student {
+class Student extends Lambdasian {
+  constructor(childAttributes) {
+    super(childAttributes);
+    this.name = childAttributes.name;
+    this.age = childAttributes.age;
+    this.location = childAttributes.location;
+    this.previousBackground = childAttributes.previousBackground;
+    this.className = childAttributes.className;
+    this.favSubjects = [childAttributes.favSubjects[0], childAttributes.favSubjects[1], childAttributes.favSubjects[2]];
+  }
+  listSubjects() {
+    console.log("Loving " + this.favSubjects + " !");
+  }
+  PRAssignment(subject) {
+    console.log(this.name + " has submitted a PR for " + subject);
+  }
+  sprintChallenge(subject) {
+    console.log(this.name + " has begun sprint challenge on " + subject);
+  }
 
 }
 
